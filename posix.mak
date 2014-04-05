@@ -105,7 +105,7 @@ howtos.html language-reference.html robots.txt process.php
 # book generation, for which reason the list is sorted by chapter.
 SPEC_ROOT=spec lex grammar module declaration type property attribute pragma	\
 	expression statement arrays hash-map struct class interface enum	\
-	const3 function operatoroverloading template template-mixin dbc		\
+	const3 function operatoroverloading template template-mixin contracts		\
 	version traits errors unittest garbage float iasm ddoc				\
 	interfaceToC cpp_interface portability entity memory-safe-d abi		\
 	simd
@@ -175,10 +175,10 @@ clean:
 	@echo You should issue manually: rm -rf ${DMD_DIR}-${LATEST} ${DRUNTIME_DIR}-${LATEST} ${PHOBOS_DIR}-${LATEST}
 
 rsync : all
-	rsync -avz --delete $(DOC_OUTPUT_DIR)/ d-programming@digitalmars.com:data/
+	rsync -avz $(DOC_OUTPUT_DIR)/ d-programming@digitalmars.com:data/
 
 rsync-only :
-	rsync -avz --delete $(DOC_OUTPUT_DIR)/ d-programming@digitalmars.com:data/
+	rsync -avz $(DOC_OUTPUT_DIR)/ d-programming@digitalmars.com:data/
 
 ################################################################################
 # Ebook
